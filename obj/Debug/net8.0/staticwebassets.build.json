@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "NIH2HE4YnP+jUzMJZIVpQXzyr2Bq5T51OMMMgZ1C9nE=",
+  "Source": "E-commerce.Server",
+  "BasePath": "_content/E-commerce.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\e-commerce.client\\e-commerce.client.esproj",
+      "Version": 2,
+      "Source": "e-commerce.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
