@@ -1,6 +1,5 @@
 ﻿
 using E_commerce.Server.data;
-using E_commerce.Server.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce.Server.DAL.BASE
@@ -23,7 +22,7 @@ namespace E_commerce.Server.DAL.BASE
         public async Task Add(T entity)
         {
             _DbSet.Add(entity);
-           await  _Dbcontext.SaveChangesAsync();
+            await _Dbcontext.SaveChangesAsync();
         }
 
         public async Task Delete(T entity)
@@ -62,7 +61,7 @@ namespace E_commerce.Server.DAL.BASE
 
         public async Task<T> GetByEmail(string email)
         {
-    
+
             var entity = await _DbSet.FirstOrDefaultAsync(e => EF.Property<string>(e, "Email") == email);
             if (entity == null)
             {
@@ -72,20 +71,6 @@ namespace E_commerce.Server.DAL.BASE
 
         }
 
-
-
-        //public async Task<T> GetByEmail(T entity)
-        //{
-        //    if (entity == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(entity));
-        //    }
-        //    if (string.IsNullOrEmpty(EF.Property<string>(entity, "Email")))
-        //    {
-        //        throw new ArgumentException("Email property is null or empty.", nameof(entity));
-        //    }
-        //    return await _DbSet.FindAsync(EF.Property<string>(entity, "Email"));
-        //}
 
 
     }

@@ -7,7 +7,7 @@ namespace E_commerce.Server.Service
     {
         Task<(int statusCode, bool success)> UserSignup(UserReq req);
 
-        Task<(int statusCode, bool success)> UserSignIn(SignInReq req);
+        Task<(int statusCode, IEnumerable<User>? Users, bool success)> UserSignIn(SignInReq req);
 
     }
 }

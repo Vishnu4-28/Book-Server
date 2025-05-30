@@ -21,7 +21,7 @@ namespace E_commerce.Server.Service
         }
 
 
-        public async Task<(int statusCode, bool success)> UserSignIn(SignInReq req)
+        public async Task<(int statusCode, IEnumerable<User>? Users, bool success)> UserSignIn(SignInReq req)
         {
             try
             {
@@ -29,13 +29,13 @@ namespace E_commerce.Server.Service
 
                 if (user == null || user.Password != req.Password)
                 {
-                    return (401, false);
+                    return (401, null, false);
                 }
-                return (200, true);
+                return (200, new List<User> { user }, true);
             }
             catch
             {
-                return (500, false);
+                return (500, null, false);
             }
         }
 

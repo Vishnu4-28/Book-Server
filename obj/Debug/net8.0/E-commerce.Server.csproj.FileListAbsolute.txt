@@ -145,3 +145,4 @@ C:\Users\Idol\source\repos\E-commerce\E-commerce.Server\bin\Debug\net8.0\Microso
 C:\Users\Idol\source\repos\E-commerce\E-commerce.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Idol\source\repos\E-commerce\E-commerce.Server\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Idol\source\repos\E-commerce\E-commerce.Server\obj\Debug\net8.0\E-commerce.Server.sourcelink.json
+C:\Users\Idol\source\repos\E-commerce\E-commerce.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
