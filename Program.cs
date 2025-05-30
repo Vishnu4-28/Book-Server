@@ -27,7 +27,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddScoped<IService, Service>();
+builder.Services.AddScoped<IAuth, Auth>();
+
 builder.Services.AddScoped<IRepository<Books>, Repository<Books>>();
+builder.Services.AddScoped<IRepository<User>, Repository<User>>();
 
 
 var app = builder.Build();

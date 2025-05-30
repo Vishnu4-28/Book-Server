@@ -1,5 +1,6 @@
 ﻿
 using E_commerce.Server.data;
+using E_commerce.Server.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce.Server.DAL.BASE
@@ -58,5 +59,34 @@ namespace E_commerce.Server.DAL.BASE
             _Dbcontext.Entry(entity).State = EntityState.Modified;
             return _Dbcontext.SaveChangesAsync();
         }
+
+        public async Task<T> GetByEmail(string email)
+        {
+    
+            var entity = await _DbSet.FirstOrDefaultAsync(e => EF.Property<string>(e, "Email") == email);
+            if (entity == null)
+            {
+                throw new KeyNotFoundException($"Entity with email {email} not found.");
+            }
+            return entity;
+
+        }
+
+
+
+        //public async Task<T> GetByEmail(T entity)
+        //{
+        //    if (entity == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(entity));
+        //    }
+        //    if (string.IsNullOrEmpty(EF.Property<string>(entity, "Email")))
+        //    {
+        //        throw new ArgumentException("Email property is null or empty.", nameof(entity));
+        //    }
+        //    return await _DbSet.FindAsync(EF.Property<string>(entity, "Email"));
+        //}
+
+
     }
 }

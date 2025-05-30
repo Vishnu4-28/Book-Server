@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="DAL\Repository\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
 </Project>

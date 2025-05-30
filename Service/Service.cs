@@ -45,9 +45,6 @@ namespace E_commerce.Server.Service
         }
 
 
-       
-
-
         public async Task<(int statusCode, IEnumerable<Books>? Books, bool success)> getDeleteBooks()
         {
             try
@@ -116,6 +113,8 @@ namespace E_commerce.Server.Service
             await _booksRepository.Update(book);
             return (200, true);
         }
+
+
 
         public async Task<(int StatusCode, bool success)> UpdateById(UpdateBookReq req, int book_id)
         {

@@ -12,6 +12,7 @@ namespace E_commerce.Server.data
         }
 
         DbSet<Books> Books { get; set; }
+        DbSet<User> Users { get; set; }
 
     }
 }
