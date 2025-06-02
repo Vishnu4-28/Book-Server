@@ -22,7 +22,7 @@ namespace E_commerce.Server.DAL.BASE
         public async Task Add(T entity)
         {
             _DbSet.Add(entity);
-           await  _Dbcontext.SaveChangesAsync();
+            await _Dbcontext.SaveChangesAsync();
         }
 
         public async Task Delete(T entity)
@@ -58,5 +58,20 @@ namespace E_commerce.Server.DAL.BASE
             _Dbcontext.Entry(entity).State = EntityState.Modified;
             return _Dbcontext.SaveChangesAsync();
         }
+
+        public async Task<T> GetByEmail(string email)
+        {
+
+            var entity = await _DbSet.FirstOrDefaultAsync(e => EF.Property<string>(e, "Email") == email);
+            if (entity == null)
+            {
+                throw new KeyNotFoundException($"Entity with email {email} not found.");
+            }
+            return entity;
+
+        }
+
+
+
     }
 }

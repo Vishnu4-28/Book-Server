@@ -5,7 +5,7 @@ namespace E_commerce.Server.Service
 {
     public interface IService
     {
-        Task<(int statusCode, IEnumerable<Books>? Books, bool success)> GetBooks();
+        Task<(int statusCode, IEnumerable<BookRes>? Books, bool success)> GetBooks();
 
         Task<(int statusCode, bool success)> AddBooks(BookReq req);
 
@@ -18,7 +18,7 @@ namespace E_commerce.Server.Service
 
         Task<(bool success, int statusCode, string message)> SoftDeleteBook(int bookId);
 
-        Task<(int statusCode, IEnumerable<Books>? Books, bool success)> getDeleteBooks();
+        Task<(int statusCode, IEnumerable<BookRes>? Books, bool success)> getDeleteBooks();
 
         Task<(int StatusCode, bool success)> RestoreBook( int book_id);
         

@@ -1,11 +1,12 @@
 ﻿using E_commerce.Server.Model.DTO;
+using E_commerce.Server.Model.Entities;
 using E_commerce.Server.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_commerce.Server.Controllers
 {
-
-
+    //[Authorize(Roles = "Admin")]
     [ApiController]
     [Route("[controller]/[Action]")]
     public class BooksController : ControllerBase
@@ -34,8 +35,7 @@ namespace E_commerce.Server.Controllers
                     errors
                 });
 
-            }    
-
+            }
 
             var data = await _service.AddBooks(book);
             if (!data.success)
@@ -51,7 +51,11 @@ namespace E_commerce.Server.Controllers
                 statusCode = data.statusCode,
                 message = "Book added successfully"
             });
+
         }
+
+
+
 
 
 
@@ -148,8 +152,6 @@ namespace E_commerce.Server.Controllers
 
 
 
-
-
         [HttpGet(Name = "GetById")]
         public async Task<IActionResult> getById(int book_id)
         {
@@ -217,8 +219,7 @@ namespace E_commerce.Server.Controllers
 
         }
 
-  
-
+      
 
         [HttpGet(Name = "GetDeletedBooks")]
         public async Task<IActionResult> getAlllBooks()

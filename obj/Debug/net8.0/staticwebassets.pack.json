@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\2e0f5c94-aa01-4115-bfa8-072aee9209fb.jpg",
+      "PackagePath": "staticwebassets\\2e0f5c94-aa01-4115-bfa8-072aee9209fb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\1a589e72-bdac-40ba-ad1d-5e6e273b2168.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\1a589e72-bdac-40ba-ad1d-5e6e273b2168.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\3e7d99a6-30a7-421b-89ca-69cacf8a2e5e.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\3e7d99a6-30a7-421b-89ca-69cacf8a2e5e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9adac5d1-4550-4f54-8a49-ae6abca76070.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\9adac5d1-4550-4f54-8a49-ae6abca76070.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9fb9cbd5-24ae-4cd9-ad30-b192a12ea56f.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\9fb9cbd5-24ae-4cd9-ad30-b192a12ea56f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\b760b058-26ca-4a86-88a6-3e21f71b1e95.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\b760b058-26ca-4a86-88a6-3e21f71b1e95.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\bfc13acf-a999-480c-a75d-7e4bf6714ca4.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\bfc13acf-a999-480c-a75d-7e4bf6714ca4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\d033f478-0aaf-4fb2-bc28-b7342905a07f.jpg",
+      "PackagePath": "staticwebassets\\FileUpload\\d033f478-0aaf-4fb2-bc28-b7342905a07f.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.E-commerce.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.E-commerce.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.E-commerce.Server.props",
+      "PackagePath": "build\\E-commerce.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.E-commerce.Server.props",
+      "PackagePath": "buildMultiTargeting\\E-commerce.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.E-commerce.Server.props",
+      "PackagePath": "buildTransitive\\E-commerce.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
