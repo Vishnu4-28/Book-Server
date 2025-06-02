@@ -1,4 +1,5 @@
 ﻿using E_commerce.Server.Model.DTO;
+using E_commerce.Server.Model.Entities;
 using E_commerce.Server.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +53,9 @@ namespace E_commerce.Server.Controllers
             });
 
         }
+
+
+
 
 
 
@@ -148,8 +152,6 @@ namespace E_commerce.Server.Controllers
 
 
 
-
-
         [HttpGet(Name = "GetById")]
         public async Task<IActionResult> getById(int book_id)
         {
@@ -217,8 +219,7 @@ namespace E_commerce.Server.Controllers
 
         }
 
-  
-
+      
 
         [HttpGet(Name = "GetDeletedBooks")]
         public async Task<IActionResult> getAlllBooks()
@@ -240,6 +241,10 @@ namespace E_commerce.Server.Controllers
             //    Data = data.Books
             //});
         }
+
+
+
+
 
 
     }

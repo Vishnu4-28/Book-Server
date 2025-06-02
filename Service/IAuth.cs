@@ -9,5 +9,7 @@ namespace E_commerce.Server.Service
 
         Task<(int statusCode, IEnumerable<User>? Users, bool success)> UserSignIn(SignInReq req);
 
+        Task<BookImg> PostFileAsync(IFormFile fileData, string imageCaption, string imageDescription , int Book_id);
+
     }
 }

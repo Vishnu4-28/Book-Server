@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="DAL\Repository\" />
+    <Folder Include="wwwroot\FileUpload\" />
   </ItemGroup>
 
 </Project>

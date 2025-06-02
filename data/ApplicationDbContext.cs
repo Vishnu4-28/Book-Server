@@ -1,4 +1,5 @@
-﻿using E_commerce.Server.Model.Entities;
+﻿using E_commerce.Server.Migrations;
+using E_commerce.Server.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce.Server.data
@@ -13,6 +14,7 @@ namespace E_commerce.Server.data
 
         DbSet<Books> Books { get; set; }
         DbSet<User> Users { get; set; }
+        DbSet<BookImg> BookImgs { get; set; }
 
     }
 }

@@ -96,6 +96,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
 // Add authorization policies
 builder.Services.AddAuthorization(options =>
 {
@@ -105,14 +106,12 @@ builder.Services.AddAuthorization(options =>
 
 
 
-
-
 builder.Services.AddScoped<IService, Service>();
 builder.Services.AddScoped<IAuth, Auth>();
 
 builder.Services.AddScoped<IRepository<Books>, Repository<Books>>();
 builder.Services.AddScoped<IRepository<User>, Repository<User>>();
-
+builder.Services.AddScoped<IRepository<BookImg>, Repository<BookImg>>();
 
 var app = builder.Build();
 
@@ -128,6 +127,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

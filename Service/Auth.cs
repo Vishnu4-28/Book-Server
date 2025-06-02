@@ -9,15 +9,39 @@ namespace E_commerce.Server.Service
     public class Auth : IAuth
     {
         private readonly IRepository<User> _usersRepository;
-
+        private readonly IWebHostEnvironment _environment;
+        private readonly IRepository<BookImg> _bookImg;
+        private readonly string _uploadFolder;
 
 
         private readonly ApplicationDbContext _dbContext;
 
-        public Auth(IRepository<User> _repo , ApplicationDbContext context)
+        public Auth(IRepository<User> _repo , ApplicationDbContext context , IRepository<BookImg> bookImg , IWebHostEnvironment environment)
         {
             _usersRepository = _repo;
             _dbContext = context;
+            _bookImg = bookImg;
+            _environment = environment;
+
+            if (string.IsNullOrEmpty(_environment.WebRootPath))
+            {
+                _environment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
+
+            // Create wwwroot directory if it doesn't exist
+            if (!Directory.Exists(_environment.WebRootPath))
+            {
+                Directory.CreateDirectory(_environment.WebRootPath);
+            }
+
+            _uploadFolder = Path.Combine(_environment.WebRootPath, "FileUpload");
+
+            // Create the upload folder if it doesn't exist
+            if (!Directory.Exists(_uploadFolder))
+            {
+                Directory.CreateDirectory(_uploadFolder);
+            }
+
         }
 
 
@@ -61,6 +85,45 @@ namespace E_commerce.Server.Service
             catch
             {
                 return (500, false);
+            }
+        }
+
+        public async Task<BookImg> PostFileAsync(IFormFile fileData, string imageCaption, string imageDescription , int Book_id)
+        {
+            try
+            {
+                var file = new BookImg
+                {
+                    Book_id = Book_id,
+                    FileName = Path.GetFileNameWithoutExtension(fileData.FileName),
+                    FileType = Path.GetExtension(fileData.FileName),
+                    FileSize = fileData.Length,
+                    ImageCaption = imageCaption,
+                    ImageDescription = imageDescription,
+                    UploadDate = DateTime.Now
+ 
+                };
+
+ 
+                var uniqueFileName = $"{Guid.NewGuid()}{file.FileType}";
+               
+                file.FilePath = Path.Combine("FileUpload", uniqueFileName);
+                var fullPath = Path.Combine(_uploadFolder, uniqueFileName);
+
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    await fileData.CopyToAsync(stream);
+                }
+
+       
+               await _bookImg.Add(file);
+                
+
+                return file;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

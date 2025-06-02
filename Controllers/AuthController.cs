@@ -68,8 +68,40 @@ namespace E_commerce.Server.Controllers
             {
                 statusCode = 200,
                 message = "Sign-in successful",
+                user_id = result.Users,
                 token
             });
+        }
+
+
+        [HttpPost(Name = "UploadProfile")]
+        public async Task<IActionResult> uploadImage([FromForm] FileUploadDTO model)
+        {
+            try
+            {
+                if (model.MyImage == null || model.MyImage.Length == 0)
+                {
+                    return BadRequest("No file uploaded");
+                }
+
+           
+                var uploadedFile = await _authService.PostFileAsync(
+                    model.MyImage,
+                    model.ImageCaption, 
+                    model.ImageDescription,
+                    model.Book_id 
+                );
+
+                return Ok(new
+                {
+                    message = "File uploaded successfully",
+                    file = uploadedFile
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Something went wrong: " + ex.Message);
+            }
         }
 
 
@@ -117,6 +149,7 @@ namespace E_commerce.Server.Controllers
             {
                 statusCode = result.statusCode,
                 message = "Sign-in successful"
+      
             });
 
         }
