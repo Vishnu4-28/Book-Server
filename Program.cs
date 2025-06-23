@@ -6,21 +6,54 @@ using E_commerce.Server.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
+
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "AllowLocalhost3000";
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowAll", policy =>
+
+//        policy.AllowAnyOrigin()
+//              .AllowAnyMethod()
+//              .AllowAnyHeader());
+//});
+
+var db_host = Environment.GetEnvironmentVariable("DB_HOST");
+var db_Name = Environment.GetEnvironmentVariable("DB_NAME");
+var db_sa_password = Environment.GetEnvironmentVariable("DB_SA_PASSWORD");
+var ConnectionString = $"Server={db_host};Database={db_Name};User Id=sa; Password={db_sa_password};TrustServerCertificate=True;";
+
 
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader());
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost:53394")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
+                      });
 });
 
 
 
+
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers(option =>
+{
+    option.RespectBrowserAcceptHeader = true;
+    option.ReturnHttpNotAcceptable = true;
+
+}).AddXmlSerializerFormatters();
+
+
+
+
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -28,6 +61,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "E-Commerce API", Version = "v1" });
+    options.OperationFilter<FileUploadOperation>();
 
     // Add JWT Bearer support
     options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
@@ -106,31 +140,42 @@ builder.Services.AddAuthorization(options =>
 
 
 
-builder.Services.AddScoped<IService, Service>();
+
+
+builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuth, Auth>();
 
 builder.Services.AddScoped<IRepository<Books>, Repository<Books>>();
 builder.Services.AddScoped<IRepository<User>, Repository<User>>();
+
+builder.Services.AddSignalR();
 builder.Services.AddScoped<IRepository<BookImg>, Repository<BookImg>>();
+
 
 var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+
 }
 
-app.UseHttpsRedirection();
+
 app.UseCors("AllowAll");
 app.UseStaticFiles();
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapHub<NotificationHub>("/NotificationHub");
 app.MapFallbackToFile("/index.html");
+
 
 app.Run();

@@ -1,20 +1,28 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using System.Runtime.Intrinsics.X86;
 using E_commerce.Server.DAL.BASE;
 using E_commerce.Server.data;
 using E_commerce.Server.Model.DTO;
 using E_commerce.Server.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using static System.Net.WebRequestMethods;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using static System.Reflection.Metadata.BlobBuilder;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.IO;
 
 namespace E_commerce.Server.Service
 {
-    public class Service : IService
+    public class BookService : IBookService
     {
         private readonly IRepository<Books> _booksRepository;
         private readonly IRepository<BookImg> _bookImgRepository;
         private readonly ApplicationDbContext _DbContext;
 
-        public Service(IRepository<Books> booksRepository ,IRepository<BookImg> BookImgRepo  ,ApplicationDbContext dbContext)
+        public BookService(IRepository<Books> booksRepository ,IRepository<BookImg> BookImgRepo  ,ApplicationDbContext dbContext)
         {
             _booksRepository = booksRepository;
             _DbContext = dbContext;
@@ -62,8 +70,9 @@ namespace E_commerce.Server.Service
 
                 return (200, data , true);
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine($"Error in GetBooks: {ex.Message}");
                 return (500, null, false);
             }
         }
@@ -101,6 +110,7 @@ namespace E_commerce.Server.Service
                             join img in bookImg
                             on bookdetail.Book_Id equals img.Book_id into bookImages
                             from img in bookImages.DefaultIfEmpty()
+
                             select new BookRes
                             {
                                 Book_Id = bookdetail.Book_Id,
@@ -111,9 +121,9 @@ namespace E_commerce.Server.Service
                                 IsDeleted = bookdetail.IsDeleted,
                                 FilePath = img != null ? img.FilePath : null
                             }).ToList();
-        
 
                 return (200, data, true);
+
             }
             catch
             {
@@ -203,10 +213,10 @@ namespace E_commerce.Server.Service
 
                 var img = BookImg.FirstOrDefault(b => b.Book_id == book_id);
 
-                if (img == null)
-                {
-                    return (404, false);
-                }
+                //if (img == null)
+                //{
+                //    return (404, false);
+                //}
 
                 if (book == null)
                 {
@@ -214,7 +224,10 @@ namespace E_commerce.Server.Service
                 }
 
                 await _booksRepository.Delete(book);
+                if (img != null)
+                {
                 await _bookImgRepository.Delete(img);
+                }
                 return (200, true);
             }
             catch
@@ -222,12 +235,6 @@ namespace E_commerce.Server.Service
                 return (500, false);
             }
         }
-
-
-
-
-
-
 
 
 
@@ -249,7 +256,7 @@ namespace E_commerce.Server.Service
             }
         }
 
-        [HttpPut(Name = "SoftDeleteBook")]
+
         public async Task<(bool success, int statusCode, string message)> SoftDeleteBook(int bookId)
         {
             var book = await _booksRepository.GetById(bookId);
@@ -264,7 +271,55 @@ namespace E_commerce.Server.Service
             return (true, 200, "Book soft deleted successfully");
         }
 
+        public async Task<List<Books>> PostExcelFile(IFormFile fileData)
+        {
+            if (fileData == null || fileData.Length == 0)
+                return null;
+
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            var filePath = Path.Combine(uploadsFolder, fileData.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await fileData.CopyToAsync(stream);
+            }
+
+            var books = new List<Books>();
+
+
+            using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+
+
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+                using (var reader = ExcelDataReader.ExcelReaderFactory.CreateReader(stream))
+                {
+                    reader.Read();
+                    while (reader.Read())
+                    {
+                        var book = new Books
+                        {
+                            Title = reader.GetValue(0)?.ToString(),
+                            Author = reader.GetValue(1)?.ToString(),
+                            ISBN = reader.GetValue(2) != null ? Convert.ToInt32(reader.GetValue(2)) : 0,
+                            Quantity = reader.GetValue(3) != null ? Convert.ToInt32(reader.GetValue(3)) : 0,
+                            IsDeleted = false
+                        };
+                        books.Add(book);
+                        await _booksRepository.Add(book);
+                    }
+                    //await _dbContext.SaveChangesAsync();
+                }
+            }
+            return books;
+        }
+
+
 
     }
 
 }
+

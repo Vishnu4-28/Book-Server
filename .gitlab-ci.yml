@@ -1,0 +1,11 @@
+# .gitlab-ci.yml
+default:
+  image: node:23
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - echo "Hello world"

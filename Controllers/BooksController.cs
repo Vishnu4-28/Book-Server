@@ -1,26 +1,83 @@
-﻿using E_commerce.Server.Model.DTO;
-using E_commerce.Server.Model.Entities;
+﻿using E_commerce.Server.Hubs;
+using E_commerce.Server.Model.DTO;
 using E_commerce.Server.Service;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.VisualBasic;
 
 namespace E_commerce.Server.Controllers
 {
     //[Authorize(Roles = "Admin")]
+    [EnableCors("AllowLocalhost3000")]
     [ApiController]
     [Route("[controller]/[Action]")]
+
+
+
     public class BooksController : ControllerBase
     {
 
-        private readonly IService _service;
+        private readonly IBookService _service;
 
-        public BooksController(IService service)
+        private readonly IHubContext<NotificationHub> _notificationHubContext;  
+
+        public BooksController(IBookService service, IHubContext<NotificationHub> hub )
         {
             _service = service;
+            _notificationHubContext = hub;
+
+        }
+        //[HttpPost(Name = "AddBook")]
+        [HttpPost(Name = "sendNotification")]
+        public async Task<IActionResult> SendNotification(string msg)
+        {
+            var notification = new
+            {
+                imageUrl = "https://placekitten.com/200/200",
+                msg = msg ,
+                connection = "Some connection info"
+            };
+
+            await Task.Delay(5000);
+            await _notificationHubContext.Clients.All.SendAsync("receiveNotification", notification);
+            return Ok(notification);
+        }
+
+
+
+        [HttpPost(Name = "upload-excel")]
+        public async Task<IActionResult> UploadExcelFile(IFormFile file)
+        {
+            try
+            {
+                var result = await _service.PostExcelFile(file);
+                if (result == null || !result.Any())
+                    return BadRequest("No data found in the file");
+
+                return Ok(new
+                {
+                    statusCode = 200,
+                    message = "File processed successfully",
+                    data = result
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    statusCode = 500,
+                    message = "An error occurred",
+                    error = ex.Message
+                });
+            }
 
         }
 
 
+
+        [Authorize(Roles = "Admin")]
         [HttpPost(Name = "AddBook")]
         public async Task<IActionResult> AddBook([FromBody] BookReq book)
         {
@@ -57,8 +114,38 @@ namespace E_commerce.Server.Controllers
 
 
 
+        //[HttpPost]
+        //[Consumes("multipart/form-data")]
+        //public async Task<IActionResult> ImportExcelFile([FromForm] IFormFile file)
+        //{
+        //    try
+        //    {
+        //        if (file == null || file.Length == 0)
+        //            return BadRequest("No file uploaded");
+
+        //        var result = await _service.PostExcelFile(file);
+
+        //        if (result == null || !result.Any())
+        //            return BadRequest("No data found in the file");
+
+        //        return Ok(new
+        //        {
+        //            statusCode = 200,
+        //            message = "File processed successfully",
+        //            data = result
+        //        });
+        //    }
+        //    catch
+        //    {
+        //        return StatusCode(500, "Something went wrong: ");
+        //    }
+        //}
 
 
+
+
+
+        [Authorize(Roles = "Admin")]
         [HttpDelete(Name = "DeleteBook")]
         public async Task<IActionResult> deleteBook(int book_id)
         {
@@ -87,7 +174,7 @@ namespace E_commerce.Server.Controllers
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut(Name = "RestoreBooks")]
         public async Task<IActionResult> restoreBooks(int book_id)
         {
@@ -119,11 +206,11 @@ namespace E_commerce.Server.Controllers
 
 
 
-
-        [HttpPut(Name ="softDelete")]
+        [Authorize(Roles = "Admin")]
+        [HttpPut(Name = "softDelete")]
         public async Task<IActionResult> SoftDelete(int book_id)
         {
-            if(book_id <= 0)
+            if (book_id <= 0)
             {
                 return BadRequest(new
                 {
@@ -174,7 +261,7 @@ namespace E_commerce.Server.Controllers
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut(Name = "UpdateBook")]
         public async Task<IActionResult> UpdateBook([FromBody] UpdateBookReq req, int book_id)
         {
@@ -205,7 +292,7 @@ namespace E_commerce.Server.Controllers
 
 
 
-        [HttpGet(Name = "GetBooks")]
+        [HttpGet(Name = "GetDeletedBooks")]
         public async Task<IActionResult> getdeletedBooks()
         {
 
@@ -219,32 +306,60 @@ namespace E_commerce.Server.Controllers
 
         }
 
-      
 
-        [HttpGet(Name = "GetDeletedBooks")]
+        //[Authorize(Roles = "Admin")]
+        [HttpGet(Name = "GetAllBooks")]
         public async Task<IActionResult> getAlllBooks()
         {
 
             var data = await _service.GetBooks();
 
 
+            //return Ok(data.Books);
+            if(data.statusCode == 200)
+            {
+                string msg = "all books are shown here";
+                SendNotification(msg);
+            }
 
-            return Ok(new
+            return Ok(new Xmlres
             {
                 statusCode = data.statusCode,
-                Data = data.Books
+                Data = data.Books?.ToArray() ?? Array.Empty<BookRes>()
+
             });
+
 
             //return View(new
             //{
             //    statusCode = data.statusCode,
             //    Data = data.Books
             //});
+
         }
 
 
 
 
+        [HttpGet]
+        public async Task<IActionResult> getAllBooksInProtoBuff()
+        {
+            var data = await _service.GetBooks();
+
+            var bookProtobufList = data.Books.Select(book => new bookProtobuf
+            {
+                Book_Id = book.Book_Id,
+                Title = book.Title,
+                Author = book.Author,
+                ISBN = book.ISBN,
+                Quantity = book.Quantity,   
+                IsDeleted = book.IsDeleted,
+                FilePath = book.FilePath
+            }).ToList();
+
+            byte[] protoBytes = ProtoSerializer.ProtoSerialize(bookProtobufList);
+            return File(protoBytes, "application/x-protobuf", "Book.bin");
+        }
 
 
     }

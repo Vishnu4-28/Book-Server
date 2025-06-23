@@ -3,7 +3,7 @@ using E_commerce.Server.Model.Entities;
 
 namespace E_commerce.Server.Service
 {
-    public interface IService
+    public interface IBookService
     {
         Task<(int statusCode, IEnumerable<BookRes>? Books, bool success)> GetBooks();
 
@@ -21,6 +21,8 @@ namespace E_commerce.Server.Service
         Task<(int statusCode, IEnumerable<BookRes>? Books, bool success)> getDeleteBooks();
 
         Task<(int StatusCode, bool success)> RestoreBook( int book_id);
-        
+
+        Task<List<Books>> PostExcelFile(IFormFile fileData);
+
     }
 }

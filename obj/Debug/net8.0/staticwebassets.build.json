@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5myIBHjAMGV/T8iQztAsr1KxGqrjQM65+gzJRD8RUyc=",
+  "Hash": "VLQdMoveiYt8AbkGY8S1NKjGH0HX6T8WMZSJJEwkHrY=",
   "Source": "E-commerce.Server",
   "BasePath": "_content/E-commerce.Server",
   "Mode": "Default",
@@ -50,6 +50,27 @@
       "OriginalItemSpec": "wwwroot\\2e0f5c94-aa01-4115-bfa8-072aee9209fb.jpg"
     },
     {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg",
+      "SourceId": "E-commerce.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\",
+      "BasePath": "_content/E-commerce.Server",
+      "RelativePath": "FileUpload/024aeac7-65d4-4483-bfa6-75b56c3b6672#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m4512cyxo0",
+      "Integrity": "yt0djWlKSqnOWDyR3ILnfRfG8joEpFlzkXH8nilJT7s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\1a589e72-bdac-40ba-ad1d-5e6e273b2168.jpg",
       "SourceId": "E-commerce.Server",
       "SourceType": "Discovered",
@@ -92,6 +113,27 @@
       "OriginalItemSpec": "wwwroot\\FileUpload\\3e7d99a6-30a7-421b-89ca-69cacf8a2e5e.jpg"
     },
     {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\6e72a69c-d061-4404-be19-cb04daed86fe.jpg",
+      "SourceId": "E-commerce.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\",
+      "BasePath": "_content/E-commerce.Server",
+      "RelativePath": "FileUpload/6e72a69c-d061-4404-be19-cb04daed86fe#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kwi99hkon6",
+      "Integrity": "9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\6e72a69c-d061-4404-be19-cb04daed86fe.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg",
       "SourceId": "E-commerce.Server",
       "SourceType": "Discovered",
@@ -113,6 +155,48 @@
       "OriginalItemSpec": "wwwroot\\FileUpload\\7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\8be7ed4c-8f19-47e5-ae49-497db7511059.jpg",
+      "SourceId": "E-commerce.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\",
+      "BasePath": "_content/E-commerce.Server",
+      "RelativePath": "FileUpload/8be7ed4c-8f19-47e5-ae49-497db7511059#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kwi99hkon6",
+      "Integrity": "9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\8be7ed4c-8f19-47e5-ae49-497db7511059.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\95a42270-f430-440e-b1d8-f456164c7c14.jpg",
+      "SourceId": "E-commerce.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\",
+      "BasePath": "_content/E-commerce.Server",
+      "RelativePath": "FileUpload/95a42270-f430-440e-b1d8-f456164c7c14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lzym6excy7",
+      "Integrity": "oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\95a42270-f430-440e-b1d8-f456164c7c14.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9adac5d1-4550-4f54-8a49-ae6abca76070.jpg",
       "SourceId": "E-commerce.Server",
       "SourceType": "Discovered",
@@ -132,6 +216,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\FileUpload\\9adac5d1-4550-4f54-8a49-ae6abca76070.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg",
+      "SourceId": "E-commerce.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\",
+      "BasePath": "_content/E-commerce.Server",
+      "RelativePath": "FileUpload/9c6cb842-2f8e-4fde-bdf2-af49ea958810#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kwi99hkon6",
+      "Integrity": "9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg"
     },
     {
       "Identity": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9fb9cbd5-24ae-4cd9-ad30-b192a12ea56f.jpg",
@@ -302,6 +407,88 @@
       ]
     },
     {
+      "Route": "FileUpload/024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8993"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yt0djWlKSqnOWDyR3ILnfRfG8joEpFlzkXH8nilJT7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:57:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yt0djWlKSqnOWDyR3ILnfRfG8joEpFlzkXH8nilJT7s="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/024aeac7-65d4-4483-bfa6-75b56c3b6672.m4512cyxo0.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8993"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yt0djWlKSqnOWDyR3ILnfRfG8joEpFlzkXH8nilJT7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:57:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m4512cyxo0"
+        },
+        {
+          "Name": "label",
+          "Value": "FileUpload/024aeac7-65d4-4483-bfa6-75b56c3b6672.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yt0djWlKSqnOWDyR3ILnfRfG8joEpFlzkXH8nilJT7s="
+        }
+      ]
+    },
+    {
       "Route": "FileUpload/1a589e72-bdac-40ba-ad1d-5e6e273b2168.1colakc450.jpg",
       "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\1a589e72-bdac-40ba-ad1d-5e6e273b2168.jpg",
       "Selectors": [],
@@ -466,6 +653,88 @@
       ]
     },
     {
+      "Route": "FileUpload/6e72a69c-d061-4404-be19-cb04daed86fe.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\6e72a69c-d061-4404-be19-cb04daed86fe.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:57:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/6e72a69c-d061-4404-be19-cb04daed86fe.kwi99hkon6.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\6e72a69c-d061-4404-be19-cb04daed86fe.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:57:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwi99hkon6"
+        },
+        {
+          "Name": "label",
+          "Value": "FileUpload/6e72a69c-d061-4404-be19-cb04daed86fe.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
+        }
+      ]
+    },
+    {
       "Route": "FileUpload/7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg",
       "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg",
       "Selectors": [],
@@ -540,6 +809,170 @@
         {
           "Name": "label",
           "Value": "FileUpload/7f041edd-96cf-4d9f-a818-5f94570fc5d1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/8be7ed4c-8f19-47e5-ae49-497db7511059.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\8be7ed4c-8f19-47e5-ae49-497db7511059.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:42:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/8be7ed4c-8f19-47e5-ae49-497db7511059.kwi99hkon6.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\8be7ed4c-8f19-47e5-ae49-497db7511059.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:42:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwi99hkon6"
+        },
+        {
+          "Name": "label",
+          "Value": "FileUpload/8be7ed4c-8f19-47e5-ae49-497db7511059.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/95a42270-f430-440e-b1d8-f456164c7c14.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\95a42270-f430-440e-b1d8-f456164c7c14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 05:04:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/95a42270-f430-440e-b1d8-f456164c7c14.lzym6excy7.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\95a42270-f430-440e-b1d8-f456164c7c14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 05:04:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lzym6excy7"
+        },
+        {
+          "Name": "label",
+          "Value": "FileUpload/95a42270-f430-440e-b1d8-f456164c7c14.jpg"
         },
         {
           "Name": "integrity",
@@ -626,6 +1059,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-oSgp+EXi6H4SJK9wYVQ1Ppg4odBipCb1aXoxfNXDzvE="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:43:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
+        }
+      ]
+    },
+    {
+      "Route": "FileUpload/9c6cb842-2f8e-4fde-bdf2-af49ea958810.kwi99hkon6.jpg",
+      "AssetFile": "C:\\Users\\Idol\\source\\repos\\E-commerce\\E-commerce.Server\\wwwroot\\FileUpload\\9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13409"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 10:43:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwi99hkon6"
+        },
+        {
+          "Name": "label",
+          "Value": "FileUpload/9c6cb842-2f8e-4fde-bdf2-af49ea958810.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9JREDGn9d4Ql8V00ClL/wp6j9lFoV5lLpPCji0Af4+E="
         }
       ]
     },

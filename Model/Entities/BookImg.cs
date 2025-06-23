@@ -14,11 +14,10 @@ namespace E_commerce.Server.Model.Entities
         public string? ImageCaption { get; set; }
         public string? ImageDescription { get; set; }
         public DateTime UploadDate { get; set; }
-        public int  Book_id { get; set; }
+        public int Book_id { get; set; }
+
         [ForeignKey("Book_id")]
-
         public virtual Books Books { get; set; }
-
 
     }
 }

@@ -2,6 +2,7 @@
 using E_commerce.Server.data;
 using E_commerce.Server.Model.DTO;
 using E_commerce.Server.Model.Entities;
+using ExcelDataReader;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce.Server.Service
@@ -11,17 +12,20 @@ namespace E_commerce.Server.Service
         private readonly IRepository<User> _usersRepository;
         private readonly IWebHostEnvironment _environment;
         private readonly IRepository<BookImg> _bookImg;
+        private readonly IRepository<Books> _Books;
         private readonly string _uploadFolder;
 
 
         private readonly ApplicationDbContext _dbContext;
 
-        public Auth(IRepository<User> _repo , ApplicationDbContext context , IRepository<BookImg> bookImg , IWebHostEnvironment environment)
+        public Auth(IRepository<User> _repo , ApplicationDbContext context , IRepository<BookImg> bookImg , IWebHostEnvironment environment , IRepository<Books> Book)
+
         {
             _usersRepository = _repo;
             _dbContext = context;
             _bookImg = bookImg;
             _environment = environment;
+            _Books = Book;
 
             if (string.IsNullOrEmpty(_environment.WebRootPath))
             {
@@ -55,6 +59,7 @@ namespace E_commerce.Server.Service
                 {
                     return (401, null, false);
                 }
+
                 return (200, new List<User> { user }, true);
             }
             catch
@@ -87,6 +92,17 @@ namespace E_commerce.Server.Service
                 return (500, false);
             }
         }
+
+
+     
+
+
+
+
+
+
+
+
 
         public async Task<BookImg> PostFileAsync(IFormFile fileData, string imageCaption, string imageDescription , int Book_id)
         {

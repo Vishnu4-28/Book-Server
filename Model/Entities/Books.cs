@@ -2,7 +2,7 @@
 
 namespace E_commerce.Server.Model.Entities
 {
-    public class Books
+    public  class Books
     {
        [Key]
        public int Book_Id { get; set; }
@@ -19,3 +19,7 @@ namespace E_commerce.Server.Model.Entities
 
     }
 }
+
+
+
+
