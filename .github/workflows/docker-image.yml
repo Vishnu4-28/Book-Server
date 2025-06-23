@@ -13,7 +13,6 @@ env:
 
 jobs:
   build-and-test:
-
     name: build-and-test-${{matrix.os}}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -22,16 +21,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET Core
+
+    - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Install dependencies
-      run: dotnet restore
-      
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    - name: Restore dependencies
+      run: dotnet restore UnitTestProject/UnitTestProject.csproj
+
+    - name: Build UnitTestProject
+      run: dotnet build UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore
+
+    - name: Test UnitTestProject only
+      run: dotnet test UnitTestProject/UnitTestProject.csproj --no-restore --verbosity normal
