@@ -1,22 +1,37 @@
+name: build and test
 
-name: dotnet package
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
 
-on: [push]
+env:
+  DOTNET_VERSION: '8.0.0' # The .NET SDK version to use
 
 jobs:
-  build:
+  build-and-test:
 
-    runs-on: ubuntu-latest
+    name: build-and-test-${{matrix.os}}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        dotnet-version: [ '8.0.x']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup dotnet ${{ matrix.dotnet-version }}
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
-      # You can test your matrix by printing the current dotnet version
-      - name: Display dotnet version
-        run: dotnet --version
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
